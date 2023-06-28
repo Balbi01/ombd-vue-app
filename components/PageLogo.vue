@@ -19,10 +19,13 @@ export default{
 <style scoped>
 
 #logo {
-    font-size: 3rem;
+    font-size: 5rem;
     color: white;
     font-weight: bold;
-    background-color: var(--light-dark-color);
+    background-color: var(--dark-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem;
 }
 #logo h1 span{
     color: rgb(173, 46, 46);

@@ -1,0 +1,53 @@
+<!-- ¡Hola! Con gusto te ayudaré a resolver tu problema. Para seleccionar una película específica y mostrar sus detalles en tu página, puedes realizar los siguientes pasos:
+
+Agrega una nueva propiedad llamada selectedMovie a tu objeto data en el componente Vue. Esta propiedad almacenará la película seleccionada. -->
+
+data() {
+  return {
+    searchTerm: '',
+    movies: [],
+    selectedMovie: null
+  };
+},
+
+<!-- Modifica la plantilla para mostrar los resultados de búsqueda y permitir la selección de una película. Puedes agregar un v-for para recorrer la lista de películas y mostrar sus títulos. Al hacer clic en un título de película, se llamará al método selectMovie y se asignará la película seleccionada a selectedMovie. -->
+
+<template>
+  <div class="search-element" id="box">
+    <h3 id="movie-text">Buscar película</h3>
+    <input type="text" v-model="searchTerm" placeholder="Buscar títulos: " id="movie-search-box">
+    <button @click="loadMovies">Buscar</button>
+    <ul>
+      <li v-for="movie in movies" :key="movie.imdbID" @click="selectMovie(movie)">
+        {{ movie.Title }}
+      </li>
+    </ul>
+    <template v-if="selectedMovie">
+      <h4>{{ selectedMovie.Title }}</h4>
+      <!-- Mostrar más detalles de la película seleccionada aquí -->
+    </template>
+  </div>
+</template>
+
+
+<!-- Implementa el método selectMovie en tu componente para asignar la película seleccionada a la propiedad selectedMovie. -->
+
+methods: {
+  // ...
+  selectMovie(movie) {
+    this.selectedMovie = movie;
+  }
+}
+
+<!-- 
+Ahora, puedes mostrar los detalles de la película seleccionada en tu página. Puedes agregarlos debajo del título de la película en la plantilla. Por ejemplo, para mostrar el año de lanzamiento
+ -->
+<div v-if="selectedMovie">
+  <h4>{{ selectedMovie.Title }}</h4>
+  <p>Año de lanzamiento: {{ selectedMovie.Year }}</p>
+  <!-- Agrega más detalles de la película aquí -->
+</div>
+
+Puedes expandir esta lógica para mostrar más detalles de la película seleccionada, como el director, el género, el argumento, etc.
+
+Espero que esta guía te ayude a mostrar los detalles 

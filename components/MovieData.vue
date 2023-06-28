@@ -1,13 +1,12 @@
 <template>
     <div id="movie-data">
-        <h3 id="title"><b>Título: </b>Avengers Endgame</h3>
-        <p id ="year"><b>Año: </b>2018</p>
-        <p id ="rated"><b>Clasificación: </b>PG-13</p>
-        <p id="released"><b>Estreno:</b> 27 de Abril de 2018</p>
-        <p id="genre"><b>Género: </b>Acción, Aventura</p>
-        <p id="actors"><b>Elenco: </b>Robert Downey Jr, Chris Evans, Tom Holland, Mark Ruffalo, Bennedict Cumberbacth</p>
-        <p id="plot"><b>Sinopsis: </b>El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito, que le confiere un poder incalculable. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia, que deberán estar dispuestos a sacrificarlo todo por un bien mayor. Capitán América e Ironman deberán limar sus diferencias, Black Panther apoyará con sus tropas desde Wakanda, Thor y los Guardianes de la Galaxia e incluso Spider-Man se unirán antes de que los planes de devastación y ruina pongan fin al universo. ¿Serán capaces de frenar el avance del titán del caos?</p>
-
+        <h3 id="title"><b>Título: </b>{{ movie.Title }}</h3>
+        <p id="year"><b>Año: </b>{{ movie.Year }}</p>
+        <p id="rated"><b>Clasificación: </b>{{ movie.Rated }}</p>
+        <p id="released"><b>Estreno: </b>{{ movie.Released }}</p>
+        <p id="genre"><b>Género: </b>{{ movie.Genre }}</p>
+        <p id="actors"><b>Elenco: </b>{{ movie.Actors }}</p>
+        <p id="plot"><b>Sinopsis: </b>{{ movie.Plot }}</p>
     </div>
 
 </template>
@@ -16,7 +15,7 @@
 export default{
     name: 'MovieData',
     props:{
-        msg: String
+        movie: Object
     }
 }
 
